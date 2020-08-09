@@ -10,6 +10,43 @@
   </head>
 
   <body>
+
+
+    <% if user_signed_in? %>
+
+      <ul class="">
+        <li role="">
+          <%= link_to user_path(current_user) do %>
+            <button type="button" class="btn btn-success navbar-btn"><h4>マイページ</h4></button>
+          <% end %>
+        </li>
+        <li role="presentation">
+          <%= link_to destroy_user_session_path, method: :delete  do %>
+            <button type="button" class="btn btn-success navbar-btn"><h4>ログアウト</h4></button>
+          <% end %>
+        </li>
+      </ul>
+
+    <% else %>
+
+      <ul class="">
+        <li role="">
+          <%= link_to new_user_registration_path do %>
+            <button type="button" class="btn btn-success navbar-btn"><h4>会員登録</h4></button>
+          <% end %>
+        </li>
+        <li role="presentation">
+          <%= link_to new_user_session_path do %>
+            <button type="button" class="btn btn-success navbar-btn"><h4>ログイン</h4></button>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+
+
+
+
+
     <%= yield %>
   </body>
 </html>
