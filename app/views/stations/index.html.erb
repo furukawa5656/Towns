@@ -1,0 +1,7 @@
+<h1>Lines#index</h1>
+<% @stations["response"]["station"].each do |station_name| %>
+  <%= link_to station_name["name"], root_path %>
+<% end %>
+
+
+<!-- 個別の駅へのpathを設定（idを付与しないといけない） -->

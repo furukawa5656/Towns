@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   devise_for :users
 
   root to: "home#top"
@@ -11,5 +12,7 @@ Rails.application.routes.draw do
   	patch "users/close", to: "users#close"
   end
 
+  resources :lines, only:[:index]
+  resources :stations, only:[:index, :show]
 
 end

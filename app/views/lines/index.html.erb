@@ -1,0 +1,4 @@
+<h1>Lines#index</h1>
+<% @lines["response"]["line"].each do |line_name| %>
+  <%= link_to line_name, stations_path(line: line_name) %>
+<% end %>
