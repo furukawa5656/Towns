@@ -2,7 +2,7 @@ require 'net/http'
 module HeartRails
   module Line
     class << self
-       def list(prefecture)
+      def list(prefecture)
         uri = URI.parse(URI.encode("http://express.heartrails.com/api/json?method=getLines&prefecture=#{prefecture}"))
          http = Net::HTTP.new(uri.host, uri.port)
          # URLを叩いている
@@ -11,8 +11,8 @@ module HeartRails
           }
           JSON.parse(res.body)
           # bodyでレスポンスのボディ（ほしい値だけ取ってくる）
-         end
       end
+    end
   end
 end
 

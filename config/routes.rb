@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
 
   root to: "home#top"
@@ -13,6 +14,10 @@ Rails.application.routes.draw do
   end
 
   resources :lines, only:[:index]
-  resources :stations, only:[:index, :show]
+  resources :stations, only:[:index, :show] do
+  	resources :comments, only: [:new, :create, :destroy]
+  end
+
+  resources :categories, only: [:create, :edit, :update]
 
 end

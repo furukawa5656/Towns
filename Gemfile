@@ -64,3 +64,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'enum_help'
 gem 'jquery-rails'
+gem 'jquery-rails'
+gem 'ratyrate'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'
+gem "gmaps4rails"

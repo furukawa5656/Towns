@@ -1,6 +1,6 @@
 <h1>Lines#index</h1>
-<% @stations["response"]["station"].each do |station_name| %>
-  <%= link_to station_name["name"], root_path %>
+<% @stations["response"]["station"].each do |station| %>
+  <%= link_to station["name"], station_path(1, x:station["x"], y:station["y"]) %>
 <% end %>
 
 

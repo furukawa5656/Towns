@@ -1,4 +1,20 @@
-<h1>Lines#index</h1>
-<% @lines["response"]["line"].each do |line_name| %>
-  <%= link_to line_name, stations_path(line: line_name) %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+									<%= image_tag("/assets/997909.jpg", size: '50x50') %><span>~県のの路線から口コミを探す</span>
+									<table class="table">
+										<% @lines["response"]["line"].each do |line_name| %>
+										<tbody>
+											<tr>
+												<td><%= link_to line_name, stations_path(line: line_name) %></td>
+											</tr>
+										</tbody>
+										<% end %>
+									</table>
+									<% @lines["response"]["line"].each do |line_name| %>
+									  <%= link_to line_name, stations_path(line: line_name) %>
+									<% end %>
+
+		</div>
+	</div>
+</div>

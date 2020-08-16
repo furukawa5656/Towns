@@ -15,4 +15,8 @@ class User < ApplicationRecord
 		super && (self.is_active === "Available")
   end
 
+  has_many :comments
+
+  ratyrate_rater
+
 end
