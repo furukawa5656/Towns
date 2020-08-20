@@ -15,10 +15,9 @@ class CommentsController < ApplicationController
   	@comment = current_user.comments.new(comment_params)
   	@comment.station_id = @station.id
   	if @comment.save
+      redirect_to station_path(id: @station, x: @station.x, y:@station.y)
+    else
       redirect_to root_path
-    #  station_path(@station.id)
-    # else
-    #   redirect_to root_path
     end
   end
 

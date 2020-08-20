@@ -1,0 +1,73 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<%= @station.id %>
+			<div><%= @station.name %>駅の口コミ情報</div><span><%= link_to "コメントページに移動する", new_station_comment_path(@station.id), data: {"turbolinks" => false} %></span>
+			<div class="description">
+				<%= @station.name %><span>駅について</span>
+			　　<div><%= @station.description %></div>
+			</div>
+<!-- 		<%= @station.prefecture %>
+			<%= @station.y %>
+			<%= @station.x %>　　　　　　 -->
+			<!-- 地図表示-->
+			<div id="map" style="width: 750px; height: 500px;"></div>
+			<script>
+				function initMap() {
+				  var station = { lat: <%= @station.y %>, lng: <%= @station.x %>}  // 駅の経度緯度をstationに代入
+				  var map = new google.maps.Map(document.getElementById('map'), {　　// googlemapAPIのクラスをmapに代入
+				    zoom: 16,
+				    center: station　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//駅の真ん中に表示
+				  });
+
+				    marker = new google.maps.Marker({								//googlemapAPIのクラスをmarkerに代入
+				      position: station,										　　// markerの場所は上で定義したstationに表示
+				      map: map　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//マーカーを表示する地図を指定（mapは上で定義済）
+				    });
+			}
+			</script>
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxxDyBmd_jP9_2QOANNKU-bdUDR-n-2eY&callback=initMap"></script>
+			<!-- コメント一覧-->
+			<div class="comment">
+				<% @comments.each do |c| %>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<% if c.user.gender_before_type_cast == 0 %>
+								<td><%= image_tag("/assets/man.jpg", size: '50x50') %></td>
+							<% else %>
+								<td><%= image_tag("/assets/woman.jpg", size: '50x50') %></td>
+							<% end %>
+							<td><%= c.user.age_group %></td>
+							<td><%= c.user.family_structure %></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><div id="<%= 'star_' + c.id.to_s  %>"></td>
+							<td>カテゴリー：<%= c.category.name %></td>
+							<td></td>
+						</tr>
+					</tbody>
+					<tbody>
+						<tr>
+							<td>コメント内容：<%= c.body %></td>
+						</tr>
+					</tbody>
+				</table>
+				<script>
+					<% rating = Rate.find_by(rater_id: c.user.id) %>
+
+			        $('#star_' + <%= c.id %>).raty({
+					  readOnly: true,
+					  score: <%= rating ? rating.stars : 0 %>
+					});
+		        </script>
+				<% end %>
+			</div>
+		</div>
+		<div class="col-lg-2"></div>
+	</div>
+</div>
+

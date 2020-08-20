@@ -1,7 +1,22 @@
-<h1>Lines#index</h1>
-<% @stations["response"]["station"].each do |station| %>
-  <%= link_to station["name"], station_path(1, x:station["x"], y:station["y"]) %>
-<% end %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<h1>駅から口コミを探す</h1>
+			<% @stations["response"]["station"].each do |station| %>
+			<table class="table table-bordered table-striped table-hover">
+				<tbody>
+					<tr>
+						<td><%= link_to station["name"], station_path(1, x:station["x"], y:station["y"]) %></td>
+					</tr>
+				</tbody>
+			</table>
+			<% end %>
+		</div>
+		<div class="col-lg-2"></div>
+	</div>
+</div>
+
 
 
 <!-- 個別の駅へのpathを設定（idを付与しないといけない） -->

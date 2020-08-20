@@ -1,152 +1,178 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-2 left"></div>
+        <div class="col-lg-8">
+            <h1 class="topsub">あなたが知りたい口コミ情報のある駅へGO!</h1>
+            <div class="japan_prefecture">
+                <div class="japan_map">
+                    <%= image_tag "japan.png", :size =>'546x506' %>
+                    <!-- <img src="dog.jpg" alt="［写真］">alt:何かしらの問題で表示されなかった際に代替テキストが表示されます -->
+                    <span class="area_btn area1" data-area="1">北海道・東北</span>
+                    <span class="area_btn area2" data-area="2">関東</span>
+                    <span class="area_btn area3" data-area="3">中部</span>
+                    <span class="area_btn area4" data-area="4">近畿</span>
+                    <span class="area_btn area5" data-area="5">中国・四国</span>
+                    <span class="area_btn area6" data-area="6">九州・沖縄</span>
 
-<h1>あなたが知りたい口コミ情報のある駅へGO!</h1>
+                    <div class="area_overlay"></div>
+                    <div class="pref_area">
+                        <div class="pref_list" data-list="1">
+                            <div data-id="1">北海道</div>
+                            <div data-id="2">青森県</div>
+                            <div data-id="3">岩手県</div>
+                            <div data-id="4">宮城県</div>
+                            <div data-id="5">秋田県</div>
+                            <div data-id="6">山形県</div>
+                            <div data-id="7">福島県</div>
+                            <div></div>
+                        </div>
 
+                        <div class="pref_list" data-list="2">
+                            <div data-id="8">茨城県</div>
+                            <div data-id="9">栃木県</div>
+                            <div data-id="10">群馬県</div>
+                            <div data-id="11">埼玉県</div>
+                            <div data-id="12">千葉県</div>
+                            <div data-id="13">東京都</div>
+                            <div data-id="14">神奈川県</div>
+                            <div></div>
+                        </div>
 
+                        <div class="pref_list" data-list="3">
+                            <div data-id="15">新潟県‎</div>
+                            <div data-id="16">富山県‎</div>
+                            <div data-id="17">石川県‎</div>
+                            <div data-id="18">福井県‎</div>
+                            <div data-id="19">山梨県‎</div>
+                            <div data-id="20">長野県‎</div>
+                            <div data-id="21">岐阜県</div>
+                            <div data-id="22">静岡県</div>
+                            <div data-id="23">愛知県‎</div>
+                            <div></div>
+                        </div>
 
-<p>jQuery稼働テスト(未稼働)</p>
+                        <div class="pref_list" data-list="4">
+                            <div data-id="24">三重県</div>
+                            <div data-id="25">滋賀県</div>
+                            <div data-id="26">京都府</div>
+                            <div data-id="27">大阪府</div>
+                            <div data-id="28">兵庫県</div>
+                            <div data-id="29">奈良県</div>
+                            <div data-id="30">和歌山県</div>
+                            <div></div>
+                        </div>
 
+                        <div class="pref_list" data-list="5">
+                            <div data-id="31">鳥取県</div>
+                            <div data-id="32">島根県</div>
+                            <div data-id="33">岡山県</div>
+                            <div data-id="34">広島県</div>
+                            <div data-id="35">山口県</div>
+                            <div data-id="36">徳島県</div>
+                            <div data-id="37">香川県</div>
+                            <div data-id="38">愛媛県</div>
+                            <div data-id="39">高知県</div>
+                            <div></div>
+                        </div>
 
-<div class="japan_map">
-    <%= image_tag "prefecture.png", :size =>'546x506' %>
-    <!-- <img src="dog.jpg" alt="［写真］">alt:何かしらの問題で表示されなかった際に代替テキストが表示されます -->
+                        <div class="pref_list" data-list="6">
+                            <div data-id="40">福岡県</div>
+                            <div data-id="41">佐賀県</div>
+                            <div data-id="42">長崎県</div>
+                            <div data-id="43">熊本県</div>
+                            <div data-id="44">大分県</div>
+                            <div data-id="45">宮崎県</div>
+                            <div data-id="46">鹿児島県</div>
+                            <div data-id="47">沖縄県</div>
+                        </div>
+                    </div>
+                </div>
 
-    <span class="area_btn area1" data-area="1">北海道・東北</span>
-    <span class="area_btn area2" data-area="2">関東</span>
-    <span class="area_btn area3" data-area="3">中部</span>
-    <span class="area_btn area4" data-area="4">近畿</span>
-    <span class="area_btn area5" data-area="5">中国・四国</span>
-    <span class="area_btn area6" data-area="6">九州・沖縄</span>
+                <div class="prefecture">
+                    <h4>全国の気になる駅を探す</h4>
+                    <h5>北海道・東北</h5>
+                    <ul>
+                        <li><%= link_to "北海道", 'lines?p=1' %></li>
+                        <li><%= link_to "青森", 'lines?p=2' %></li>
+                        <li><%= link_to "岩手", 'lines?p=3' %></li>
+                        <li><%= link_to "宮城", 'lines?p=4' %></li>
+                        <li><%= link_to "秋田", 'lines?p=5' %></li>
+                        <li><%= link_to "山形", 'lines?p=6' %></li>
+                        <li><%= link_to "福島", 'lines?p=7' %></li>
+                    </ul>
+                    <h5>関東</h5>
+                    <ul>
+                        <li><%= link_to "茨城", 'lines?p=8' %></li>
+                        <li><%= link_to "栃木", 'lines?p=9' %></li>
+                        <li><%= link_to "群馬", 'lines?p=10' %></li>
+                        <li><%= link_to "埼玉", 'lines?p=11' %></li>
+                        <li><%= link_to "千葉", 'lines?p=12' %></li>
+                        <li><%= link_to "東京", 'lines?p=13' %></li>
+                        <li><%= link_to "神奈川", 'lines?p=14' %></li>
+                    </ul>
+                    <h5>中部</h5>
+                    <ul>
+                        <li><%= link_to "新潟県‎", 'lines?p=15' %></li>
+                        <li><%= link_to "富山", 'lines?p=16' %></li>
+                        <li><%= link_to "石川", 'lines?p=17' %></li>
+                        <li><%= link_to "福井", 'lines?p=18' %></li>
+                        <li><%= link_to "山梨", 'lines?p=19' %></li>
+                        <li><%= link_to "長野", 'lines?p=20' %></li>
+                        <li><%= link_to "岐阜", 'lines?p=21' %></li>
+                        <li><%= link_to "静岡", 'lines?p=22' %></li>
+                        <li><%= link_to "愛知", 'lines?p=23' %></li>
+                    </ul>
+                    <h5>近畿</h5>
+                    <ul>
+                        <li><%= link_to "三重", 'lines?p=24' %></li>
+                        <li><%= link_to "滋賀", 'lines?p=25' %></li>
+                        <li><%= link_to "京都", 'lines?p=26' %></li>
+                        <li><%= link_to "大阪", 'lines?p=27' %></li>
+                        <li><%= link_to "兵庫", 'lines?p=28' %></li>
+                        <li><%= link_to "奈良", 'lines?p=29' %></li>
+                        <li><%= link_to "和歌山", 'lines?p=30' %></li>
+                    </ul>
+                    <h5>中国・四国</h5>
+                    <ul>
+                        <li><%= link_to "鳥取", 'lines?p=31' %></li>
+                        <li><%= link_to "島根", 'lines?p=32' %></li>
+                        <li><%= link_to "岡山", 'lines?p=33' %></li>
+                        <li><%= link_to "広島", 'lines?p=34' %></li>
+                        <li><%= link_to "山口", 'lines?p=35' %></li>
+                        <li><%= link_to "徳島", 'lines?p=36' %></li>
+                        <li><%= link_to "香川", 'lines?p=37' %></li>
+                        <li><%= link_to "愛媛", 'lines?p=38' %></li>
+                        <li><%= link_to "高知", 'lines?p=39' %></li>
+                    </ul>
+                    <h5>九州・沖縄</h5>
+                    <ul>
+                        <li><%= link_to "福岡", 'lines?p=31' %></li>
+                        <li><%= link_to "佐賀", 'lines?p=32' %></li>
+                        <li><%= link_to "長崎", 'lines?p=33' %></li>
+                        <li><%= link_to "熊本", 'lines?p=34' %></li>
+                        <li><%= link_to "大分", 'lines?p=35' %></li>
+                        <li><%= link_to "宮崎", 'lines?p=36' %></li>
+                        <li><%= link_to "鹿児島", 'lines?p=37' %></li>
+                        <li><%= link_to "沖縄", 'lines?p=38' %></li>
+                    </ul>
+                </div>
+            </div>
 
-    <div class="area_overlay"></div>
-    <div class="pref_area">
-        <div class="pref_list" data-list="1">
-            <div data-id="1">北海道</div>
-            <div data-id="2">青森県</div>
-            <div data-id="3">岩手県</div>
-            <div data-id="4">宮城県</div>
-            <div data-id="5">秋田県</div>
-            <div data-id="6">山形県</div>
-            <div data-id="7">福島県</div>
-            <div></div>
+            <div class="topcomment">
+                <p>コメントを表示</p>
+            </div>
+
         </div>
-
-        <div class="pref_list" data-list="2">
-            <div data-id="8">茨城県</div>
-            <div data-id="9">栃木県</div>
-            <div data-id="10">群馬県</div>
-            <div data-id="11">埼玉県</div>
-            <div data-id="12">千葉県</div>
-            <div data-id="13">東京都</div>
-            <div data-id="14">神奈川県</div>
-            <div></div>
-        </div>
-
-        <div class="pref_list" data-list="3">
-            <div data-id="15">新潟県‎</div>
-            <div data-id="16">富山県‎</div>
-            <div data-id="17">石川県‎</div>
-            <div data-id="18">福井県‎</div>
-            <div data-id="19">山梨県‎</div>
-            <div data-id="20">長野県‎</div>
-            <div data-id="21">岐阜県</div>
-            <div data-id="22">静岡県</div>
-            <div data-id="23">愛知県‎</div>
-            <div></div>
-        </div>
-
-        <div class="pref_list" data-list="4">
-            <div data-id="24">三重県</div>
-            <div data-id="25">滋賀県</div>
-            <div data-id="26">京都府</div>
-            <div data-id="27">大阪府</div>
-            <div data-id="28">兵庫県</div>
-            <div data-id="29">奈良県</div>
-            <div data-id="30">和歌山県</div>
-            <div></div>
-        </div>
-
-        <div class="pref_list" data-list="5">
-            <div data-id="31">鳥取県</div>
-            <div data-id="32">島根県</div>
-            <div data-id="33">岡山県</div>
-            <div data-id="34">広島県</div>
-            <div data-id="35">山口県</div>
-            <div data-id="36">徳島県</div>
-            <div data-id="37">香川県</div>
-            <div data-id="38">愛媛県</div>
-            <div data-id="39">高知県</div>
-            <div></div>
-        </div>
-
-        <div class="pref_list" data-list="6">
-            <div data-id="40">福岡県</div>
-            <div data-id="41">佐賀県</div>
-            <div data-id="42">長崎県</div>
-            <div data-id="43">熊本県</div>
-            <div data-id="44">大分県</div>
-            <div data-id="45">宮崎県</div>
-            <div data-id="46">鹿児島県</div>
-            <div data-id="47">沖縄県</div>
-        </div>
+        <div class="col-lg-2 right"></div>
     </div>
 </div>
 
 
-<h2>gmap</h2>
 
-<!-- 地名入力用のinputを追加 -->
-<input id="address" type="textbox" value="Sydney, NSW">
 
-<!-- buttonをクリックしたらcodeAddressを実行　-->
-<input type="button" value="Encode" onclick="codeAddress()">
-<div id='map'>
-</div>
 
-<style>
-#map{
-  height: 400px;
-}
-</style>
 
-<script>
-/*
-mapを関数の外で定義(codeAddressでも使うため)
-geocoderを用意
-*/
 
-let map
-let geocoder
 
-function initMap(){
-  // geocoderを初期化
-  geocoder = new google.maps.Geocoder()
 
-  map = new google.maps.Map(document.getElementById('map'), {
-  center: {lat: -34.397, lng: 150.644},
-  zoom: 20
-  });
-}
-
-function codeAddress(){
-  // 入力を取得
-  let inputAddress = document.getElementById('address').value;
-
-  // geocodingしたあとmapを移動
-  geocoder.geocode( { 'address': inputAddress}, function(results, status) {
-    if (status == 'OK') {
-　　　　　　　　　　　　// map.setCenterで地図が移動
-      map.setCenter(results[0].geometry.location);
-
-　　　　　　　　　　　　// google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
-      var marker = new google.maps.Marker({
-          map: map,
-          position: results[0].geometry.location
-      });
-    } else {
-      alert('Geocode was not successful for the following reason: ' + status);
-    }
-  });
-}
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxxDyBmd_jP9_2QOANNKU-bdUDR-n-2eY&callback=initMap" async defer></script>
 

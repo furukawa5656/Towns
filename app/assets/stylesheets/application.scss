@@ -16,13 +16,35 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.row {
+    background:rgba(237,242,240,0.2);
+}
+
+/* ヘッダー開始 */
+.image {
+  background-image: url('/assets/images/backimage.jpg');
+  height: 110px;
+  background-size:cover;
+}
+
+.image a {
+    color: black;
+    text-align: center;
+}
+/* ヘッダー終了 */
+
+
+
+
+/* トップページ開始 */
+
 /* 日本地図DOM */
 .japan_map{
     position: relative;
     box-sizing: border-box;
     margin: 0 auto;
     display: table;
-    background-color: #adf6ff;
+    background-color: white;
 }
 /* 日本地図画像（スマホ対応用） */
 .japan_map img{
@@ -49,7 +71,7 @@
 /* ボタン配置（使用する日本地図画像により微調整） */
 .japan_map .area_btn.area1{
     top: 30%;
-    right: 0;
+    right: 5%;
     width: 30%;
 }
 .japan_map .area_btn.area2{
@@ -130,3 +152,84 @@
         font-size: 4vw;
     }
 }
+
+.japan_map {
+    margin-top: 50px;
+}
+
+.japan_map img {
+    border: solid 1px black;
+    padding: 3px;
+}
+
+.container .japan_map .prefecture {
+  display: flex;
+}
+
+.prefecture {
+    padding: 15px;
+    margin-left: 50px;
+}
+
+.prefecture h4 {
+    padding: 20px 0;
+}
+
+.prefecture ul {
+    padding-left: 0px;
+}
+
+.prefecture li {
+    display: inline;
+}
+
+.japan_prefecture {
+  display: flex;
+  justify-content: space-between;
+}
+
+.topsub {
+    border: solid 5px #87cefa;
+    border-radius: 50px;
+    padding: 13px;
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Corben', cursive;
+}
+
+.topsub {
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 1px #96c2fe;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+
+/* トップページ終了 */
+
+/* 会員登録開始 */
+
+.regi {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* 会員登録開始 */
+
+/* ログイン開始 */
+
+.log {
+  display: flex;
+}
+
+.log_link {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+
+
+
+
+
+

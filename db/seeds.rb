@@ -63,7 +63,7 @@ Category.create(name: '子育て')
 Category.create(name: '交通の利便性')
 
 # 大阪府の駅
-# Station.create(name: '相川', prefecture: '大阪府', description: 'test', x: 135.533853, y: 34.757942)
+#Station.create(name: '相川', prefecture: '大阪府', description: 'test', x: 135.533853, y: 34.757942)
 # Station.create(name: '浅香', prefecture: '大阪府', description: 'test', x: 135.502423, y: 34.585303)
 # Station.create(name: '浅香山', prefecture: '大阪府', description: 'test', x: 135.491025, y: 34.589319,)
 # Station.create(name: '朝潮橋', prefecture: '大阪府', description: 'test', x: 135.448863, y: 34.661035)

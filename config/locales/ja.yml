@@ -4,3 +4,18 @@ ja:
       gender:
         man: "男性"
         woman: "女性"
+
+ja:
+  enums:
+    user:
+      age_group:
+        teens: "10 代"
+        twenties: "20 代"
+        thirties: "30 代"
+        forties: "40 代"
+        fifties: "50 代以上"
+
+      family_structure:
+        lone: "一人暮らし"
+        couple: "同棲・結婚"
+        family: "ファミリー"

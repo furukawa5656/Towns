@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-3"></div>
-		<div class="col-lg-6" style="background-color: orange;">
+		<div class="col-lg-6" style="background-color: white;">
 			<h1>口コミ投稿</h1>
 
 
@@ -11,6 +11,10 @@
 							      	<p>カテゴリー選択</p>
 							    　  <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
 							      </div>
+
+							      <p>station : <%= rating_for @station, '駅' %></p>
+
+
 							      <div>
 								    <p>コメント</p>
 								    <%= f.text_area :body %>
@@ -20,5 +24,6 @@
 							      </div>
 							  　<% end %>
 							  <% end %>
+		</div>
     </div>
 </div>
