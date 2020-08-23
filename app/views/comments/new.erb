@@ -1,29 +1,25 @@
 <div class="container">
 	<div class="row">
-		<div class="col-lg-3"></div>
-		<div class="col-lg-6" style="background-color: white;">
-			<h1>口コミ投稿</h1>
-
-
-							  <% if user_signed_in? %>
-							    <%= form_with(model: [@station, @comment], local: true) do |f| %>
-							      <div>
-							      	<p>カテゴリー選択</p>
-							    　  <%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
-							      </div>
-
-							      <p>station : <%= rating_for @station, '駅' %></p>
-
-
-							      <div>
-								    <p>コメント</p>
-								    <%= f.text_area :body %>
-							      </div>
-							      <div>
-							        <%= f.submit "コメントする" %>
-							      </div>
-							  　<% end %>
-							  <% end %>
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<h3 class="commentsub">口コミ投稿フォーム</h3>
+			<div class="comment">
+			    <%= form_with(model: [@station, @comment], local: true) do |f| %>
+			    	<div>
+			      		<div>カテゴリー選択</div>
+			      		<%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
+			      	</div>
+			        <div class="comment_c">
+			        	<div>コメント</div>
+				    	<%= f.text_area :body %>
+			      	</div>
+			      	<div><%= rating_for @station, '駅', disable_after_rate: false %></div>
+			      	<div class="comment_s">
+			        	<%= f.submit "口コミする" %>
+			      	</div>
+			  　	<% end %>
+		  	</div>
 		</div>
+		<div class="col-lg-2"></div>
     </div>
 </div>

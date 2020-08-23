@@ -16,13 +16,19 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+
 .row {
     background:rgba(237,242,240,0.2);
 }
 
-/* ヘッダー開始 */
+
+
+
+
+/* ヘッダー・フッター開始 */
 .image {
-  background-image: url('/assets/images/backimage.jpg');
+  background-image: image-url('/assets/images/backimage.jpg');
   height: 110px;
   background-size:cover;
 }
@@ -31,13 +37,32 @@
     color: black;
     text-align: center;
 }
-/* ヘッダー終了 */
+
+.footer {
+  background-image: image-url('/assets/images/backimage.jpg');
+  height: 110px;
+  background-size:cover;
+  background-position:100px 1200px;
+  margin-top: auto;
+}
+
+body,
+#wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer  p {
+    line-height: 110px;
+}
+/* ヘッダー・フッター終了 */
+
 
 
 
 
 /* トップページ開始 */
-
 /* 日本地図DOM */
 .japan_map{
     position: relative;
@@ -204,19 +229,37 @@
   color: #454545;
 }
 
+.top_comment_info {
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+    align-items: center;
+    height: 30px;
+}
+
+.c_b {
+    height: 40px;
+    line-height: 40px;
+}
 /* トップページ終了 */
 
-/* 会員登録開始 */
 
+
+
+
+/* 会員登録開始 */
 .regi {
   display: flex;
   justify-content: space-between;
 }
+/* 会員登録終了*/
 
-/* 会員登録開始 */
+
+
+
+
 
 /* ログイン開始 */
-
 .log {
   display: flex;
 }
@@ -225,11 +268,163 @@
     display: flex;
     justify-content: flex-end;
 }
+/* ログイン終了 */
+
+
+
+
+
+/* パスワード忘れ開始 */
+.passforget {
+    margin: 30px 0 0 120px;
+}
+/* パスワード忘れ終了 */
 
 
 
 
 
 
+/* マイページ画面開始 */
+.editout {
+    display: flex;
+    justify-content: space-around;
+}
+/* マイページ画面終了 */
 
 
+
+
+
+/* プロフィール編集画面開始 */
+.editage  {
+    width: 155px;
+}
+
+.editfamily {
+    width: 155px;
+}
+/* プロフィール編集画面終了 */
+
+
+
+
+
+/* 退会画面開始 */
+.closeuser {
+    text-align: center;
+}
+
+.closeuser p {
+    margin: 35px 0;
+}
+/* 退会画面終了 */
+
+
+
+
+
+/* 路線・駅一覧開始 */
+.lineimage {
+    margin: 30px 0 10px 0;
+}
+
+.lineindex span {
+    font-size: 18px;
+}
+
+.stationimage {
+    margin: 30px 0 10px 0;
+}
+
+.stationindex span {
+    font-size: 18px;
+}
+/* 路線・駅一覧終了 */
+
+
+
+
+
+/* 駅詳細開始 */
+.stationnamestar {
+    display: flex;
+    justify-content: space-around;
+    border-top: solid 5px #f0f8ff;
+}
+
+.stationnamestar h3 {
+    margin: 30px 0 30px;
+}
+
+.stationnamestar a {
+    margin-top: 30px;
+}
+
+.description {
+    border-top: solid 5px #f0f8ff;
+    margin-bottom: 20px;
+}
+
+.d_s_name {
+    font-size: 20px;
+    padding: 10px 0 0 0;
+    width: 720px;
+    height: 20px;
+}
+
+.d_description {
+    font-size: 15px;
+}
+
+.smap {
+    border:  solid #c5bdb1 3px;
+    margin-bottom: 15px;
+}
+
+.comment_info > thead > tr > td {
+    vertical-align: middle;
+}
+
+.select_category {
+    margin-bottom: 10px;
+}
+
+.select_category select {
+    width: 135px;
+    height: 25px;
+}
+
+.comment_logout {
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+}
+/* 駅詳細終了 */
+
+
+
+
+
+/* 口コミページ開始 */
+.commentsub {
+    margin: 40px 0px 20px;
+}
+
+.comment select {
+    width: 135px;
+    height: 25px;
+}
+
+.comment textarea {
+    width: 380px;
+    height: 150px;
+}
+
+.comment_c  {
+    margin-top: 20px;
+}
+
+.comment_s {
+    margin-top: 20px;
+}
+/* 口コミページ終了 */

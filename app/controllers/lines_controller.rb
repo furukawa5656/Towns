@@ -1,10 +1,12 @@
 class LinesController < ApplicationController
   def index
   	if params[:p].present?
-  	name = Prefecture.find(params[:p]).name
-  	@lines = HeartRails::Line.list(name)
+  		#:pはid番号を自動で見つけてくる
+  	@name = Prefecture.find(params[:p]).name
+  	@lines = HeartRails::Line.list(@name)
+
     else
-    	@lines = []
+    	@lines = {"response"=>{"line"=>[]}}
     end
   end
 end

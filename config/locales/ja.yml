@@ -5,9 +5,6 @@ ja:
         man: "男性"
         woman: "女性"
 
-ja:
-  enums:
-    user:
       age_group:
         teens: "10 代"
         twenties: "20 代"

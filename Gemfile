@@ -72,3 +72,8 @@ gem "gmaps4rails"
 gem 'pry-byebug'
 gem 'rb-readline'
 gem 'safe_attributes'
+
+gem 'dotenv-rails'
+group :production do
+  gem 'mysql2'
+end

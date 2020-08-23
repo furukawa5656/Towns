@@ -1,7 +1,8 @@
 require 'net/http'
 module HeartRails
   module Station
-    class << self
+    #フォルダのディレクトリをネストしているのでここもネスト関係を記載
+    class << self #クラス化を実現している。例：user.name
        def list(name)
         uri = URI.parse(URI.encode("http://express.heartrails.com/api/json?method=getStations&line=#{name}"))
          http = Net::HTTP.new(uri.host, uri.port)

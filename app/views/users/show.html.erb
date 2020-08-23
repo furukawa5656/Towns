@@ -1,10 +1,35 @@
-<h1>登録情報</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-2"></div>
+    <div class="col-lg-8">
+    	<h2>プロフィール情報</h2>
+    	<table class="table table-bordered">
+    		<tbody>
+    			<tr>
+    				<td class="info col-xs-3 col-ms-3 col-md-4 col-lg-4">ニックネーム</td>
+    				<td class="text-center"><%= @user.nickname %></td>
+    			</tr>
+    			<tr>
+    				<td class="info">性別</td>
+    				<td class="text-center"><%= @user.gender_i18n %></td>
+    			</tr>
+    			<tr>
+    				<td class="info">年代</td>
+    				<td class="text-center"> <%= @user.age_group_i18n %></td>
+    			</tr>
+    			<tr>
+    				<td class="info">生活スタイル</td>
+    				<td class="text-center"><%= @user.family_structure_i18n %></td>
+    			</tr>
+    		</tbody>
+    	</table>
+        <div class="editout">
+            <div><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></div>
+            <div><%= link_to "退会ページに進む", user_users_close_view_path(current_user) %></div>
+        </div>
+    </div>
 
-
-<p>ニックネーム<span><%= @user.nickname %></span></p>
-<p>性別<span><%= @user.gender_i18n %></span></p>
-<p>年代<span><%= @user.age_group %></span></p>
-<p>家族構成<span><%= @user.family_structure %></span></p>
-
-<%= link_to "編集", edit_user_path(current_user) %>
-<%= link_to "退会", user_users_close_view_path(current_user) %>
+        <div class="col-lg-2"></div>
+        </div>
+    </div>
+</div>
