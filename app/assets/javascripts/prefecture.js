@@ -22,7 +22,7 @@ $(document).ready(function() {
             console.log(id)
             //このidを使用して行いたい操作をしてください
             //都道府県IDに応じて別ページに飛ばしたい場合はこんな風に書く↓
-            window.location.href = 'http://localhost:3000/lines?p=' + id;
+            window.location.href = '/lines?p=' + id;
 
             prefReset();
         }

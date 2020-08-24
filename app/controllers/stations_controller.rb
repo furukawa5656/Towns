@@ -2,6 +2,7 @@ class StationsController < ApplicationController
   def index
   	if params[:line].present?
   	@stations = HeartRails::Station.list(params[:line])
+    #@stations = Station.where(line_id: params[:line_id])
     @line = params[:line]
     else
     	@stations = []
