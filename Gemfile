@@ -70,7 +70,7 @@ gem 'enum_help'
 gem 'jquery-rails'
 gem 'jquery-rails'
 gem 'ratyrate'
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'jquery-rails'
 gem "gmaps4rails"
 gem 'pry-byebug'
