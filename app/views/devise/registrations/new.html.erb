@@ -1,3 +1,6 @@
+<main>
+
+
 <div class="container">
   <div class="row">
     <div class="col-lg-2"></div>
@@ -34,9 +37,8 @@
               </tr>
               <tr>
                 <td>
-                  <%= f.label :パスワード %>
+                  <%= f.label :パスワード %><span>(6文字以上)</span>
                   <% if @minimum_password_length %>
-            　　　 <span><%= @minimum_password_length %><span>(文字以上)</span></span>
                   <% end %>
                 </td>
                 <td><%= f.password_field :password, autocomplete: "new-password" %></td>
@@ -56,3 +58,5 @@
         </div>
     </div>
 </div>
+
+</main>

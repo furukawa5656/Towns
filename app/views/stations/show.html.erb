@@ -7,9 +7,6 @@
 				<h3>
 					<%= @station.name %>駅の口コミ情報
 				</h3>
-				<div class="star">
-					<%= rating_for @station, '駅', imdb_avg: true %>
-				</div>
 				<% if user_signed_in? %>
 					<div><%= link_to "口コミを投稿する", new_station_comment_path(@station.id), data: {"turbolinks" => false}, class: "btn btn-default btn-primary" %></div>
 				<% end %>

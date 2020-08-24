@@ -18,19 +18,13 @@
 
 
 
-.row {
-    background:rgba(237,242,240,0.2);
-}
-
-
-
 
 
 /* ヘッダー・フッター開始 */
 .image {
   background-image: image-url('/assets/images/backimage.jpg');
-  height: 110px;
-  background-size:cover;
+  background-size: cover;
+  background-position: top;
 }
 
 .image a {
@@ -39,24 +33,143 @@
 }
 
 .footer {
-  background-image: image-url('/assets/images/backimage.jpg');
-  height: 110px;
-  background-size:cover;
-  background-position:100px 1200px;
+  background-image: image-url('/assets/images/footerimage.jpg');
+  background-size: cover;
+  background-position: center;
   margin-top: auto;
+  height: 110px;
 }
 
-body,
-#wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.footer  p {
+.footer p {
     line-height: 110px;
 }
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1;
+}
+
+
+
 /* ヘッダー・フッター終了 */
+
+
+
+
+
+/* 初めての方ページ開始 */
+.about {
+    display: flex;
+    justify-content: center;
+    margin: 60px 0 60px 0;
+}
+
+.a-towns {
+    line-height: 160px;
+    margin-left: 200px;
+}
+
+.a-info {
+    width: 520px;
+}
+
+.point {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #ff8e9d;
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 120px;
+  height: 90px;
+}
+
+.point:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #ff8e9d;
+  z-index: 0;
+}
+
+.point2 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #70a6ff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 120px;
+  height: 90px;
+}
+
+.point2:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #70a6ff;
+  z-index: 0;
+}
+
+.point3 {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 0;
+  padding: 0 5px;
+  width: 90px;
+  height: 90px;
+  line-height: 90px;
+  text-align: center;
+  color: #FFF;
+  font-size: 20px;
+  font-weight: bold;
+  background: #a4eb84;
+  border-radius: 50%;
+  box-sizing: border-box;
+  width: 120px;
+  height: 90px;
+}
+
+.point3:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  margin-left: -15px;
+  border: 15px solid transparent;
+  border-bottom: 15px solid #a4eb84;
+  z-index: 0;
+}
+/* 初めての方ページ終了 */
 
 
 
@@ -227,6 +340,10 @@ body,
   border: dashed 1px #96c2fe;
   padding: 0.2em 0.5em;
   color: #454545;
+}
+
+.topcomment {
+    margin-bottom: 50px;
 }
 
 .top_comment_info {
