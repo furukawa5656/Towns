@@ -89,9 +89,9 @@
 						<thead>
 							<tr>
 								<% if c.user.gender_before_type_cast == 0 %>
-									<td width="30%" class="text-center warning"><%= image_tag("/assets/man.jpg", size: '40x40') %></td>
+									<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
 								<% else %>
-									<td width="30%" class="text-center warning"><%= image_tag("/assets/woman.jpg", size: '40x40') %></td>
+									<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
 								<% end %>
 								<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
 								<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>

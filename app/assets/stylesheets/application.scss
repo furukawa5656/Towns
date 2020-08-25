@@ -24,7 +24,7 @@
 
 /* ヘッダー・フッター開始 */
 .image {
-  background-image: image-url('/assets/images/backimage.jpg');
+  background-image: image-url("backimage.jpg");
   background-size: cover;
   background-position: top;
 }
@@ -35,7 +35,7 @@
 }
 
 .footer {
-  background-image: image-url('/assets/images/footerimage.jpg');
+  background-image: image-url("footerimage.jpg");
   background-size: cover;
   background-position: center;
   margin-top: auto;
