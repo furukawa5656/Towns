@@ -1,6 +1,7 @@
 $.fn.raty.defaults.half = false;
 $.fn.raty.defaults.halfShow = true;
-$.fn.raty.defaults.path = "/assets";
+//$.fn.raty.defaults.path = "/assets";
+$.fn.raty.defaults.path = "/";
 $.fn.raty.defaults.cancel = false;
 
 $(function(){
@@ -19,23 +20,23 @@ $(function(){
       half:        $half,
       halfShow:    $halfShow,
       single:      $single,
-      path:        $(this).attr('star-path.png'),
-      starOn:      $(this).attr('star-on.png'),
-      starOff:     $(this).attr('star-off.png'),
-      starHalf:    $(this).attr('star-half.png'),
-      cancel:      $(this).attr('cancel.png'),
-      cancelPlace: $(this).attr('cancel-place.png'),
-      cancelHint:  $(this).attr('cancel-hint.png'),
-      cancelOn:    $(this).attr('cancel-on.png'),
-      cancelOff:   $(this).attr('cancel-off.png'),
-      noRatedMsg:  $(this).attr('no-rated-message.png'),
-      round:       $(this).attr('round.png'),
-      space:       $(this).attr('space.png'),
-      target:      $(this).attr('target.png'),
-      targetText:  $(this).attr('target-text.png'),
-      targetType:  $(this).attr('target-type.png'),
-      targetFormat: $(this).attr('target-format.png'),
-      targetScoret: $(this).attr('target-score.png'),
+      path:        $(this).attr('data-star-path'),
+      starOn:      $(this).attr('data-star-on'),
+      starOff:     $(this).attr('data-star-off'),
+      starHalf:    $(this).attr('data-star-half'),
+      cancel:      $(this).attr('data-cancel'),
+      cancelPlace: $(this).attr('data-cancel-place'),
+      cancelHint:  $(this).attr('data-cancel-hint'),
+      cancelOn:    $(this).attr('data-cancel-on'),
+      cancelOff:   $(this).attr('data-cancel-off'),
+      noRatedMsg:  $(this).attr('data-no-rated-message'),
+      round:       $(this).attr('data-round'),
+      space:       $(this).attr('data-space'),
+      target:      $(this).attr('data-target'),
+      targetText:  $(this).attr('data-target-text'),
+      targetType:  $(this).attr('data-target-type'),
+      targetFormat: $(this).attr('data-target-format'),
+      targetScoret: $(this).attr('data-target-score'),
       readOnly: $readonly,
       click: function(score, evt) {
         var _this = this;
