@@ -72,7 +72,7 @@
 						</tbody>
 					</table>
 					<script>
-						<% rating = Rate.find_by(rater_id: c.user.id) %>
+						<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
 
 				        $('#star_' + <%= c.id %>).raty({
 						  readOnly: true,
@@ -110,7 +110,7 @@
 						</tbody>
 					</table>
 					<script>
-						<% rating = Rate.find_by(rater_id: c.user.id) %>
+						<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
 
 				        $('#star_' + <%= c.id %>).raty({
 						  readOnly: true,

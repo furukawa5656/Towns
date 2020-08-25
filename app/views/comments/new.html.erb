@@ -5,6 +5,7 @@
 			<h3 class="commentsub">口コミ投稿フォーム</h3>
 			<div class="comment">
 			    <%= form_with(model: [@station, @comment], local: true) do |f| %>
+			    	<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
 			    	<div>
 			      		<div>カテゴリー選択</div>
 			      		<%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>

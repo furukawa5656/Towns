@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   	if @comment.save
       redirect_to station_path(id: @station, x: @station.x, y:@station.y)
     else
-      redirect_to root_path
+      render :new
     end
   end
 

@@ -3,9 +3,8 @@
     <div class="col-lg-2"></div>
 	    <div class="col-lg-8">
 			<h2>プロフィール編集</h2>
-
 			<%= form_for(@user) do |f| %>
-
+				<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
 				<table class="table table-bordered">
 					<tr>
 						<td class="info col-xs-3">ニックネーム</td>
