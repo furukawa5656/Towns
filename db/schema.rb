@@ -87,8 +87,8 @@ ActiveRecord::Schema.define(version: 2020_08_19_215515) do
     t.string "name"
     t.string "prefecture"
     t.text "description"
-    t.float "x"
-    t.float "y"
+    t.decimal "x", precision: 9, scale: 6
+    t.decimal "y", precision: 9, scale: 6
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
