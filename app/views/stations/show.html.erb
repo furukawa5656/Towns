@@ -1,6 +1,9 @@
 <div class="col-lg-2"></div>
 <div class="col-lg-8">
 	<%= @station.id %>
+	<% if flash[:notice] %>
+		<p><%= flash[:notice] %>a</p>
+	<% end %>
 	<div class="station_name_star">
 		<h3>
 			<%= @station.name %>駅の口コミ情報
