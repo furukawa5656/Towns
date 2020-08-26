@@ -1,8 +1,7 @@
-
 <div class="col-lg-2"></div>
 <div class="col-lg-8">
 	<%= @station.id %>
-	<div class="stationnamestar">
+	<div class="station_name_star">
 		<h3>
 			<%= @station.name %>駅の口コミ情報
 		</h3>
@@ -12,7 +11,7 @@
 	</div>
 	<div class="description">
 	   <div class="d_s_name"><%= @station.name %><span>駅について</span></div>
-	　　<div class="d_description"><%= @station.description %></div>
+	　　<div class="d_s_description"><%= @station.description %></div>
 	</div>
 
 	<!-- 地図表示-->
@@ -46,76 +45,76 @@
 		</div>
 		<div class="comment">
 			<% @comments.each do |c| %>
-			<table class="table table-bordered comment_info">
-				<thead>
-					<tr>
-						<% if c.user.gender_before_type_cast == 0 %>
-							<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
-						<% else %>
-							<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
-						<% end %>
-						<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
-						<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
-					</tr>
-					<tr>
-						<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
-						<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
-						<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
-					</tr>
-					<tr>
-						<td class="text-center warning" colspan="3">コメント内容</td>
-					</tr>
-					<tr>
-						<td colspan="3"><%= c.body %></td>
-					</tr>
-				</tbody>
-			</table>
-			<script>
-				<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
+				<table class="table table-bordered comment_info">
+					<thead>
+						<tr>
+							<% if c.user.gender_before_type_cast == 0 %>
+								<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
+							<% else %>
+								<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
+							<% end %>
+							<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
+							<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
+						</tr>
+						<tr>
+							<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
+							<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
+							<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
+						</tr>
+						<tr>
+							<td class="text-center warning" colspan="3">コメント内容</td>
+						</tr>
+						<tr>
+							<td colspan="3"><%= c.body %></td>
+						</tr>
+					</tbody>
+				</table>
+				<script>
+					<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
 
-		        $('#star_' + <%= c.id %>).raty({
-				  readOnly: true,
-				  score: <%= rating ? rating.stars : 0 %>
-				});
-	        </script>
+			        $('#star_' + <%= c.id %>).raty({
+					  readOnly: true,
+					  score: <%= rating ? rating.stars : 0 %>
+					});
+		        </script>
 			<% end %>
 		</div>
 	<% else %>
-		<P class="text-center">会員登録後口コミ閲覧・投稿が可能になります。</P>
-		<div class="comment comment_logout">
+		<P class="text-center">会員登録後に口コミ閲覧・投稿が可能になります。</P>
+		<div class="comment logout_comment">
 			<% @comments.each do |c| %>
-			<table class="table table-bordered comment_info_logout">
-				<thead>
-					<tr>
-						<% if c.user.gender_before_type_cast == 0 %>
-							<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
-						<% else %>
-							<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
-						<% end %>
-						<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
-						<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
-					</tr>
-					<tr>
-						<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
-						<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
-						<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
-					</tr>
-					<tr>
-						<td class="text-center warning" colspan="3">コメント内容</td>
-					</tr>
-					<tr>
-						<td colspan="3"><%= c.body %></td>
-					</tr>
-				</tbody>
-			</table>
-			<script>
-				<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
+				<table class="table table-bordered comment_info_logout">
+					<thead>
+						<tr>
+							<% if c.user.gender_before_type_cast == 0 %>
+								<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
+							<% else %>
+								<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
+							<% end %>
+							<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
+							<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
+						</tr>
+						<tr>
+							<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
+							<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
+							<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
+						</tr>
+						<tr>
+							<td class="text-center warning" colspan="3">コメント内容</td>
+						</tr>
+						<tr>
+							<td colspan="3"><%= c.body %></td>
+						</tr>
+					</tbody>
+				</table>
+				<script>
+					<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
 
-		        $('#star_' + <%= c.id %>).raty({
-				  readOnly: true,
-				  score: <%= rating ? rating.stars : 0 %>
-				});
-	        </script>
+			        $('#star_' + <%= c.id %>).raty({
+					  readOnly: true,
+					  score: <%= rating ? rating.stars : 0 %>
+					});
+		        </script>
 			<% end %>
 		</div>
 	<% end %>

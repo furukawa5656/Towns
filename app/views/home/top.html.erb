@@ -158,19 +158,18 @@
 
     <div class="topcomment">
         <h4>口コミ一覧</h4>
-            <% @comments.last(7).sort.reverse.each do |c| %>
-                <div class="top_comment_info bg-warning">
-                    <div>口コミ</div>
-                    <div>
-                        <%= c.user.nickname %>さん
-                        <%= c.station.prefecture %>
-                        <%= c.station.name %>駅
-                    </div>
-                    <div><%= c.created_at.strftime('%Y/%m/%d') %></div>
+        <% @comments.last(7).sort.reverse.each do |c| %>
+            <div class="top_comment_info bg-warning">
+                <div>口コミ</div>
+                <div>
+                    <%= c.user.nickname %>さん
+                    <%= c.station.prefecture %>
+                    <%= c.station.name %>駅
                 </div>
-                <div class="text-center c_b"><%= c.body %></div>
-
-            <% end %>
+                <div><%= c.created_at.strftime('%Y/%m/%d') %></div>
+            </div>
+            <div class="text-center c_b"><%= c.body.truncate(30) %></div>
+        <% end %>
     </div>
 </div>
 <div class="col-lg-2 right"></div>
