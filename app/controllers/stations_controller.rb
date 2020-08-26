@@ -18,5 +18,4 @@ class StationsController < ApplicationController
       #カテゴリIDカラムの中でパラメーターのカテゴリIDが入っているのを探す
     end
   end
-
 end

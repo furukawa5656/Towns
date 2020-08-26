@@ -1,14 +1,12 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_category, only: [:new, :create, :destroy]
-
+  before_action :set_category, only: [:new, :create]
+  # before_action :cannot_comment_sama_station
 
   def new
     @station = Station.find(params[:station_id])
     @comment = @station.comments.new
   end
-
-
 
 	def create
   	@station = Station.find(params[:station_id])
@@ -21,13 +19,6 @@ class CommentsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   @books = Book.find(params[:book_id])
-  #   @comment = BookComment.find_by(id: params[:id], book_id: params[:book_id])
-  #   @comment.destroy
-  # end
-
-
 	private
   	def comment_params
   	  params.require(:comment).permit(:body, :category_id)
@@ -36,6 +27,13 @@ class CommentsController < ApplicationController
     def set_category
       @categries = Category.all
     end
+
+    # def cannot_comment_sama_station
+    #   @station = Station.find(params[:station_id])
+    #   if current_user.comments.present?
+    #     redirect_to station_path(id: @station, x: @station.x, y:@station.y)
+    #   end
+    # end
 end
 
 

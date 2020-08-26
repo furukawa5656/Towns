@@ -1,23 +1,19 @@
-<div class="container stationindex">
-	<div class="row">
-		<div class="col-lg-2"></div>
-		<div class="col-lg-8">
-			<div class="stationimage text-center">
-				<%= image_tag("1425068.jpg", size: '50x50') %><span><%= @line %>の駅から口コミを探す</span>
-			</div>
-			<table class="table table-bordered table-striped table-hover">
-				<% @stations["response"]["station"].each do |station| %>
-					<tbody>
-						<tr>
-							<td><%= link_to station["name"], station_path(1, x:station["x"], y:station["y"]), data: {"turbolinks" => false} %></td>
-						</tr>
-					</tbody>
-				<% end %>
-			</table>
-		</div>
-		<div class="col-lg-2"></div>
+<div class="col-lg-2"></div>
+<div class="col-lg-8 stationindex">
+	<div class="stationimage text-center">
+		<%= image_tag("1425068.jpg", size: '50x50') %><span><%= @line %>の駅から口コミを探す</span>
 	</div>
+	<table class="table table-bordered table-striped table-hover">
+		<% @stations["response"]["station"].each do |station| %>
+			<tbody>
+				<tr>
+					<td><%= link_to station["name"], station_path(1, x:station["x"], y:station["y"]), data: {"turbolinks" => false} %></td>
+				</tr>
+			</tbody>
+		<% end %>
+	</table>
 </div>
+<div class="col-lg-2"></div>
 
 
 

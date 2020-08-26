@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-
-
   post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
 
@@ -18,6 +16,6 @@ Rails.application.routes.draw do
   	resources :comments, only: [:new, :create, :destroy]
   end
 
-  resources :categories, only: [:create, :edit, :update]
+  # resources :categories, only: [:create, :edit, :update]
 
 end

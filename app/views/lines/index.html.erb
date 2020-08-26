@@ -1,20 +1,16 @@
-<div class="container lineindex">
-	<div class="row">
-		<div class="col-lg-2"></div>
-		<div class="col-lg-8">
-			<div class="lineimage text-center">
-				<%= image_tag("997909.jpg", size: '50x50') %><span><%= @name %>の路線から口コミを探す</span>
-			</div>
-			<table class="table table-bordered table-hover table-striped">
-				<% @lines["response"]["line"].each do |line_name| %>
-					<tbody>
-						<tr>
-							<td><%= link_to line_name, stations_path(line: line_name) %></td>
-						</tr>
-					</tbody>
-				<% end %>
-			</table>
-		</div>
-		<div class="col-lg-2"></div>
+<div class="col-lg-2"></div>
+<div class="col-lg-8 lineindex">
+	<div class="lineimage text-center">
+		<%= image_tag("997909.jpg", size: '50x50') %><span><%= @name %>の路線から口コミを探す</span>
 	</div>
+	<table class="table table-bordered table-hover table-striped">
+		<% @lines["response"]["line"].each do |line_name| %>
+			<tbody>
+				<tr>
+					<td><%= link_to line_name, stations_path(line: line_name) %></td>
+				</tr>
+			</tbody>
+		<% end %>
+	</table>
 </div>
+<div class="col-lg-2"></div>

@@ -1,35 +1,29 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-2"></div>
-    <div class="col-lg-8">
-    	<h2>プロフィール情報</h2>
-    	<table class="table table-bordered">
-    		<tbody>
-    			<tr>
-    				<td class="info col-xs-3 col-ms-3 col-md-4 col-lg-4">ニックネーム</td>
-    				<td class="text-center"><%= @user.nickname %></td>
-    			</tr>
-    			<tr>
-    				<td class="info">性別</td>
-    				<td class="text-center"><%= @user.gender_i18n %></td>
-    			</tr>
-    			<tr>
-    				<td class="info">年代</td>
-    				<td class="text-center"> <%= @user.age_group_i18n %></td>
-    			</tr>
-    			<tr>
-    				<td class="info">生活スタイル</td>
-    				<td class="text-center"><%= @user.family_structure_i18n %></td>
-    			</tr>
-    		</tbody>
-    	</table>
-        <div class="editout">
-            <div><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></div>
-            <div><%= link_to "退会ページに進む", user_users_close_view_path(current_user) %></div>
-        </div>
-    </div>
-
-        <div class="col-lg-2"></div>
-        </div>
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+	<h2>プロフィール情報</h2>
+	<table class="table table-bordered">
+		<tbody>
+			<tr>
+				<td class="info col-xs-3 col-ms-3 col-md-4 col-lg-4">ニックネーム</td>
+				<td class="text-center"><%= @user.nickname %></td>
+			</tr>
+			<tr>
+				<td class="info">性別</td>
+				<td class="text-center"><%= @user.gender_i18n %></td>
+			</tr>
+			<tr>
+				<td class="info">年代</td>
+				<td class="text-center"> <%= @user.age_group_i18n %></td>
+			</tr>
+			<tr>
+				<td class="info">生活スタイル</td>
+				<td class="text-center"><%= @user.family_structure_i18n %></td>
+			</tr>
+		</tbody>
+	</table>
+    <div class="editout">
+        <div><%= link_to "プロフィールを編集する", edit_user_path(current_user) %></div>
+        <div><%= link_to "退会ページに進む", user_users_close_view_path(current_user) %></div>
     </div>
 </div>
+<div class="col-lg-2"></div>

@@ -1,129 +1,126 @@
-<div class="container">
-	<div class="row">
-		<div class="col-lg-2"></div>
-		<div class="col-lg-8">
-			<%= @station.id %>
-			<div class="stationnamestar">
-				<h3>
-					<%= @station.name %>駅の口コミ情報
-				</h3>
-				<% if user_signed_in? %>
-					<div><%= link_to "口コミを投稿する", new_station_comment_path(@station.id), data: {"turbolinks" => false}, class: "btn btn-default btn-primary" %></div>
-				<% end %>
-			</div>
-			<div class="description">
-			   <div class="d_s_name"><%= @station.name %><span>駅について</span></div>
-			　　<div class="d_description"><%= @station.description %></div>
-			</div>
 
-			<!-- 地図表示-->
-			<div class="smap" id="map" style="width: 750px; height: 400px;"></div>
-			<script>
-				function initMap() {
-				  var station = { lat: <%= @station.y %>, lng: <%= @station.x %>}  // 駅の経度緯度をstationに代入
-				  var map = new google.maps.Map(document.getElementById('map'), {　　// googlemapAPIのクラスをmapに代入
-				    zoom: 16,
-				    center: station　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//駅の真ん中に表示
-				  });
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+	<%= @station.id %>
+	<div class="stationnamestar">
+		<h3>
+			<%= @station.name %>駅の口コミ情報
+		</h3>
+		<% if user_signed_in? %>
+			<div><%= link_to "口コミを投稿する", new_station_comment_path(@station.id), data: {"turbolinks" => false}, class: "btn btn-default btn-primary" %></div>
+		<% end %>
+	</div>
+	<div class="description">
+	   <div class="d_s_name"><%= @station.name %><span>駅について</span></div>
+	　　<div class="d_description"><%= @station.description %></div>
+	</div>
 
-				    marker = new google.maps.Marker({								//googlemapAPIのクラスをmarkerに代入
-				      position: station,										　　// markerの場所は上で定義したstationに表示
-				      map: map　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//マーカーを表示する地図を指定（mapは上で定義済）
-				    });
-			}
-			</script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxxDyBmd_jP9_2QOANNKU-bdUDR-n-2eY&callback=initMap"></script>
+	<!-- 地図表示-->
+	<div class="smap" id="map" style="width: 750px; height: 400px;"></div>
+	<script>
+		function initMap() {
+		  var station = { lat: <%= @station.y %>, lng: <%= @station.x %>}  // 駅の経度緯度をstationに代入
+		  var map = new google.maps.Map(document.getElementById('map'), {　　// googlemapAPIのクラスをmapに代入
+		    zoom: 16,
+		    center: station　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//駅の真ん中に表示
+		  });
 
-			<% if user_signed_in? %>
-				<div class="select_category text-right">
-					<%= form_tag(station_path(id: @station), :method => 'get') do %>
-					    <%= hidden_field_tag :x, @station.x  %>
-					    <%= hidden_field_tag :y, @station.y  %>
-					    <!-- xとyがパラメーターに渡せていなかったので、hidden_field_tag（userに入力してもらう必要がない情報を送る）を使って情報を送った -->
-						<%= select_tag "category_id", options_for_select(Category.all.map { |category| [category.name, category.id] }), {include_blank: "カテゴリ検索"} %>
-																					<!-- mapメソッドでカテゴリモデルのnameとカテゴリidのカラムを表示させカテゴリidを送る。 -->
-						<%= submit_tag 'Search' %>
-					<% end %>
-				</div>
-				<div class="comment">
-					<% @comments.each do |c| %>
-					<table class="table table-bordered comment_info">
-						<thead>
-							<tr>
-								<% if c.user.gender_before_type_cast == 0 %>
-									<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
-								<% else %>
-									<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
-								<% end %>
-								<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
-								<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
-							</tr>
-							<tr>
-								<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
-								<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
-								<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
-							</tr>
-							<tr>
-								<td class="text-center warning" colspan="3">コメント内容</td>
-							</tr>
-							<tr>
-								<td colspan="3"><%= c.body %></td>
-							</tr>
-						</tbody>
-					</table>
-					<script>
-						<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
+		    marker = new google.maps.Marker({								//googlemapAPIのクラスをmarkerに代入
+		      position: station,										　　// markerの場所は上で定義したstationに表示
+		      map: map　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　//マーカーを表示する地図を指定（mapは上で定義済）
+		    });
+	}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxxDyBmd_jP9_2QOANNKU-bdUDR-n-2eY&callback=initMap"></script>
 
-				        $('#star_' + <%= c.id %>).raty({
-						  readOnly: true,
-						  score: <%= rating ? rating.stars : 0 %>
-						});
-			        </script>
-					<% end %>
-				</div>
-			<% else %>
-				<P class="text-center">会員登録後口コミ閲覧・投稿が可能になります。</P>
-				<div class="comment comment_logout">
-					<% @comments.each do |c| %>
-					<table class="table table-bordered comment_info_logout">
-						<thead>
-							<tr>
-								<% if c.user.gender_before_type_cast == 0 %>
-									<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
-								<% else %>
-									<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
-								<% end %>
-								<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
-								<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
-							</tr>
-							<tr>
-								<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
-								<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
-								<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
-							</tr>
-							<tr>
-								<td class="text-center warning" colspan="3">コメント内容</td>
-							</tr>
-							<tr>
-								<td colspan="3"><%= c.body %></td>
-							</tr>
-						</tbody>
-					</table>
-					<script>
-						<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
-
-				        $('#star_' + <%= c.id %>).raty({
-						  readOnly: true,
-						  score: <%= rating ? rating.stars : 0 %>
-						});
-			        </script>
-					<% end %>
-				</div>
+	<% if user_signed_in? %>
+		<div class="select_category text-right">
+			<%= form_tag(station_path(id: @station), :method => 'get') do %>
+			    <%= hidden_field_tag :x, @station.x  %>
+			    <%= hidden_field_tag :y, @station.y  %>
+			    <!-- xとyがパラメーターに渡せていなかったので、hidden_field_tag（userに入力してもらう必要がない情報を送る）を使って情報を送った -->
+				<%= select_tag "category_id", options_for_select(Category.all.map { |category| [category.name, category.id] }), {include_blank: "カテゴリ検索"} %>
+																			<!-- mapメソッドでカテゴリモデルのnameとカテゴリidのカラムを表示させカテゴリidを送る。 -->
+				<%= submit_tag 'Search' %>
 			<% end %>
 		</div>
-		<div class="col-lg-2"></div>
-	</div>
+		<div class="comment">
+			<% @comments.each do |c| %>
+			<table class="table table-bordered comment_info">
+				<thead>
+					<tr>
+						<% if c.user.gender_before_type_cast == 0 %>
+							<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
+						<% else %>
+							<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
+						<% end %>
+						<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
+						<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
+					</tr>
+					<tr>
+						<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
+						<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
+						<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
+					</tr>
+					<tr>
+						<td class="text-center warning" colspan="3">コメント内容</td>
+					</tr>
+					<tr>
+						<td colspan="3"><%= c.body %></td>
+					</tr>
+				</tbody>
+			</table>
+			<script>
+				<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
+
+		        $('#star_' + <%= c.id %>).raty({
+				  readOnly: true,
+				  score: <%= rating ? rating.stars : 0 %>
+				});
+	        </script>
+			<% end %>
+		</div>
+	<% else %>
+		<P class="text-center">会員登録後口コミ閲覧・投稿が可能になります。</P>
+		<div class="comment comment_logout">
+			<% @comments.each do |c| %>
+			<table class="table table-bordered comment_info_logout">
+				<thead>
+					<tr>
+						<% if c.user.gender_before_type_cast == 0 %>
+							<td width="30%" class="text-center warning"><%= image_tag("man.jpg", size: '40x40') %></td>
+						<% else %>
+							<td width="30%" class="text-center warning"><%= image_tag("woman.jpg", size: '40x40') %></td>
+						<% end %>
+						<td width="35%" class="text-center warning"><%= c.user.age_group_i18n %></td>
+						<td width="35%" class="text-center warning"><%= c.user.family_structure_i18n %></td>
+					</tr>
+					<tr>
+						<td width="30%" class="text-center"><div id="<%= 'star_' + c.id.to_s  %>"></td>
+						<td width="35%" class="text-center">カテゴリー：<%= c.category.name %></td>
+						<td width="35%" class="text-center"><%= c.created_at.strftime('%Y/%m/%d') %></td>
+					</tr>
+					<tr>
+						<td class="text-center warning" colspan="3">コメント内容</td>
+					</tr>
+					<tr>
+						<td colspan="3"><%= c.body %></td>
+					</tr>
+				</tbody>
+			</table>
+			<script>
+				<% rating = Rate.where(rater_id: c.user.id).where(rateable_id: @station.id).first %>
+
+		        $('#star_' + <%= c.id %>).raty({
+				  readOnly: true,
+				  score: <%= rating ? rating.stars : 0 %>
+				});
+	        </script>
+			<% end %>
+		</div>
+	<% end %>
 </div>
+<div class="col-lg-2"></div>
 
 
 

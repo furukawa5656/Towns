@@ -1,40 +1,37 @@
-<div class="container">
-  　<div class="row">
-    <div class="col-lg-2"></div>
-	    <div class="col-lg-8">
-			<h2>プロフィール編集</h2>
-			<%= form_for(@user) do |f| %>
-				<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
-				<table class="table table-bordered">
-					<tr>
-						<td class="info col-xs-3">ニックネーム</td>
-						<td><%= f.text_field :nickname %></td>
-					</tr>
-					<tr>
-						<td class="info col-xs-3">性別</td>
-						<td>
-							<%= f.label :男性  %> <%= f.radio_button :gender, :man %> 　<%= f.label :女性  %> <%= f.radio_button :gender, :woman %>
-						</td>
-					</tr>
-					<tr>
-						<td class="info col-xs-3">年代</td>
-						<td><%= f.select :age_group, User.age_groups_i18n.invert, {prompt: "--選択してください"}, class: "editage" %></td>
-					</tr>
-					<tr>
-						<td class="info col-xs-3">生活スタイル</td>
-						<td><%= f.select :family_structure, User.family_structures_i18n.invert, {prompt: "--選択してください"}, class: "editfamily" %></td>
-					</tr>
-					<tr>
-						<td class="info col-xs-3">email</td>
-						<td><%= f.email_field :email %></td>
-					</tr>
-				</table>
-				<%= f.submit "編集内容を保存する", class:"btn btn-primary" %>
-			<% end %>
-	    </div>
-	    <div class="col-lg-2"></div>
-  　</div>
+<div class="col-lg-2"></div>
+<div class="col-lg-8">
+	<h2>プロフィール編集</h2>
+	<%= form_for(@user) do |f| %>
+		<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
+		<table class="table table-bordered">
+			<tr>
+				<td class="info col-xs-3">ニックネーム</td>
+				<td><%= f.text_field :nickname %></td>
+			</tr>
+			<tr>
+				<td class="info col-xs-3">性別</td>
+				<td>
+					<%= f.label :男性  %> <%= f.radio_button :gender, :man %> 　<%= f.label :女性  %> <%= f.radio_button :gender, :woman %>
+				</td>
+			</tr>
+			<tr>
+				<td class="info col-xs-3">年代</td>
+				<td><%= f.select :age_group, User.age_groups_i18n.invert, {prompt: "--選択してください"}, class: "editage" %></td>
+			</tr>
+			<tr>
+				<td class="info col-xs-3">生活スタイル</td>
+				<td><%= f.select :family_structure, User.family_structures_i18n.invert, {prompt: "--選択してください"}, class: "editfamily" %></td>
+			</tr>
+			<tr>
+				<td class="info col-xs-3">email</td>
+				<td><%= f.email_field :email %></td>
+			</tr>
+		</table>
+		<%= f.submit "編集内容を保存する", class:"btn btn-primary" %>
+	<% end %>
 </div>
+<div class="col-lg-2"></div>
+
 
 
 
