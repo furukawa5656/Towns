@@ -22,7 +22,7 @@ class CommentsController < ApplicationController
         render :new
       end
     else
-      flash[:notice] = "口コミは各駅に1個までです。"
+      flash.now[:alert] = "口コミは各駅に1個までです。"
       render :new
     end
   end
@@ -35,14 +35,6 @@ class CommentsController < ApplicationController
     def set_category
       @categries = Category.all
     end
-
-    # def cannot_comment_sama_station
-    #   @station = Station.find(params[:station_id])
-    #   if current_user.comments.present?
-    #     flash[:notice] = "口コミは各駅に1個までです。"
-    #     redirect_to station_path(id: @station, x: @station.x, y:@station.y)
-    #   end
-    # end
 end
 
 
