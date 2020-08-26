@@ -162,7 +162,7 @@
             <div class="top_comment_info bg-warning">
                 <div>口コミ</div>
                 <div>
-                    <%= c.user.nickname %>さん
+                    <%= c.user.nickname.truncate(30) %>さん
                     <%= c.station.prefecture %>
                     <%= c.station.name %>駅
                 </div>

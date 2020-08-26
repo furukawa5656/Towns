@@ -17,6 +17,19 @@
  @import "bootstrap";
 
 
+/* テーブル文字数バグ防止 */
+table{
+    width: 750px;
+    table-layout: fixed;
+}
+
+table tr,td{
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+/* テーブル文字数バグ防止 */
+
+
 
 
 

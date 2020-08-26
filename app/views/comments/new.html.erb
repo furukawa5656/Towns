@@ -2,6 +2,9 @@
 <div class="col-lg-8">
 	<h3 class="commentsub">口コミ投稿フォーム</h3>
 	<div class="comment">
+		<% if flash[:notice] %>
+			<p><%= flash[:notice] %></p>
+		<% end %>
 	    <%= form_with(model: [@station, @comment], local: true) do |f| %>
 	    	<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
 	    	<div>
@@ -16,7 +19,7 @@
 	      	<div class="comment_s">
 	        	<%= f.submit "口コミする" %>
 	      	</div>
-	  　	<% end %>
+	  	<% end %>
   	</div>
 </div>
 <div class="col-lg-2"></div>
