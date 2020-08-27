@@ -9,8 +9,6 @@ namespace :insert_station do
         http.get(uri.request_uri)
       }
       stations = JSON.parse(res.body)
-      if stations.nil?
-		  end
       stations["response"]["station"].each do |station|
         stationhoge = Station.find_by(x: station["x"], y: station["y"] )
         if stationhoge.nil?
