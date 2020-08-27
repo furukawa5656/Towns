@@ -1,27 +1,27 @@
 # Towns
 
 ## デモ
-<img width="1421" alt="top" src="https://user-images.githubusercontent.com/65170640/91414178-265bc980-e887-11ea-9c3e-0bd63b462a95.png">
+<img width="1411" alt="スクリーンショット 2020-08-27 18 13 39" src="https://user-images.githubusercontent.com/65170640/91421834-6031cd80-e891-11ea-92c5-a5b5b03200bd.png">
 
 ## サイトテーマ
 街の暮らしの口コミサイト
 
 ### テーマを選んだ理由
-前職で多方面をのエリアを対応する不動産営業をしていました際に、
-お客様が各駅の治安などの情報の問合せが多かった経験があります。
-インターネットで調べれば情報も書いていますが、
-結局、その街に住んだことある人が発した言葉の方が、
+前職で多方面をのエリアを対応する不動産営業をしていました際に、  
+お客様が各駅の治安などの情報の問合せが多かった経験があります。  
+インターネットで調べれば情報も書いていますが、  
+結局、その街に住んだことある人が発した言葉の方が、  
 信憑性が高いと思い、今回のサイトテーマを選びました。
 
 ### ターゲットユーザ
 引越する人
 
 ### 主な利用シーン
-部屋を探す前に、どこに住みたいかという疑問を解決する
+部屋を探す前に、どこに住みたいかという疑問を解決する  
 参考サイトとして、利用していただければと思います。
 
 ## サイト概要
-引越する人のための日本全国のエリアから駅名まで検索できる
+引越する人のための日本全国のエリアから駅名まで検索できる  
 駅の治安や街の暮らしを閲覧投稿できる口コミサイトです。
 
 ### 機能
@@ -38,10 +38,10 @@ https://docs.google.com/spreadsheets/d/1q43-p9Db_y7Ytv4lbFFGXMoY-N53fowK-NCFuVey
 3. 駅のページで口コミ投稿ボタンをクリックすると口コミ投稿ができます。
 
 ## インストール
-$ git clone https://github.com/furukawa5656/Towns
-$ bundle install
-$ rails db:seed
-$ rake insert_line:run
+$ git clone https://github.com/furukawa5656/Towns  
+$ bundle install  
+$ rails db:seed  
+$ rake insert_line:run  
 $ rake insert_station:run
 
 ## 作者
