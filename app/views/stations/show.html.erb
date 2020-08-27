@@ -2,6 +2,7 @@
 <div class="col-lg-8">
 	<div class="station_name_star">
 		<h3><%= @station.name %>駅の口コミ情報</h3>
+		<!-- 駅に対して口コミしたユーザーは同じ駅にコメントできないようにコメントモデルを確認する -->
 		<% if user_signed_in? && !Comment.exists?(user_id: current_user.id, station_id: @station.id) %>
 			<div><%= link_to "口コミを投稿する", new_station_comment_path(@station.id), data: {"turbolinks" => false}, class: "btn btn-default btn-primary" %></div>
 		<% else %>
@@ -17,28 +18,28 @@
 	<div class="smap" id="map" style="width: 750px; height: 400px;"></div>
 	<script>
 		function initMap() {
-		  var station = { lat: <%= @station.y %>, lng: <%= @station.x %>}  // 駅の経度緯度をstationに代入
-		  var map = new google.maps.Map(document.getElementById('map'), {	// googlemapAPIのクラスをmapに代入
+		  var station = { lat: <%= @station.y %>, lng: <%= @station.x %>}
+		  var map = new google.maps.Map(document.getElementById('map'), {
 		    zoom: 16,
-		    center: station                                                //駅の真ん中に表示
+		    center: station
 		  });
 
-		    marker = new google.maps.Marker({								//googlemapAPIのクラスをmarkerに代入
-		      position: station,										    // markerの場所は上で定義したstationに表示
-		      map: map                                                     //マーカーを表示する地図を指定（mapは上で定義済）
+		    marker = new google.maps.Marker({
+		      position: station,
+		      map: map
 		    });
 	}
 	</script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxxDyBmd_jP9_2QOANNKU-bdUDR-n-2eY&callback=initMap"></script>
 
+	<!-- ユーザーがログインしている場合はコメントを表示、ログインしていない場合はコメントを網掛けにして表示する条件分岐 -->
 	<% if user_signed_in? %>
 		<div class="select_category text-right">
 			<%= form_tag(station_path(id: @station), :method => 'get') do %>
 			    <%= hidden_field_tag :x, @station.x  %>
 			    <%= hidden_field_tag :y, @station.y  %>
-			    <!-- xとyがパラメーターに渡せていなかったので、hidden_field_tag（userに入力してもらう必要がない情報を送る）を使って情報を送った -->
+			    <!-- xとyがパラメーターに渡せていなかったので、hidden_field_tagを使って情報を送る -->
 				<%= select_tag "category_id", options_for_select(Category.all.map { |category| [category.name, category.id] }), {include_blank: "カテゴリ検索"} %>
-																			<!-- mapメソッドでカテゴリモデルのnameとカテゴリidのカラムを表示させカテゴリidを送る。 -->
 				<%= submit_tag 'Search' %>
 			<% end %>
 		</div>

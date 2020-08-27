@@ -1,7 +1,7 @@
 class LinesController < ApplicationController
   def index
+  	#路線の最新情報を取るためにAPIからデータ取得
   	if params[:p].present?
-  		#:pはid番号を自動で見つけてくる
 	  	@name = Prefecture.find(params[:p]).name
 	  	@lines = HeartRails::Line.list(@name)
     else

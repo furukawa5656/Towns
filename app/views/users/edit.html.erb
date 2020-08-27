@@ -2,7 +2,9 @@
 <div class="col-lg-8">
 	<h2>プロフィール編集</h2>
 	<%= form_for(@user) do |f| %>
-		<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
+		<div class="error">
+			<%= render 'layouts/error_messages', model: f.object %>
+		</div>
 		<table class="table table-bordered">
 			<tr>
 				<td class="info col-xs-3">ニックネーム</td>
@@ -16,11 +18,15 @@
 			</tr>
 			<tr>
 				<td class="info col-xs-3">年代</td>
-				<td><%= f.select :age_group, User.age_groups_i18n.invert, {prompt: "--選択してください"}, class: "editage" %></td>
+				<td>
+					<%= f.select :age_group, User.age_groups_i18n.invert, {prompt: "--選択してください"}, class: "editage" %>
+				</td>
 			</tr>
 			<tr>
 				<td class="info col-xs-3">生活スタイル</td>
-				<td><%= f.select :family_structure, User.family_structures_i18n.invert, {prompt: "--選択してください"}, class: "editfamily" %></td>
+				<td>
+					<%= f.select :family_structure, User.family_structures_i18n.invert, {prompt: "--選択してください"}, class: "editfamily" %>
+				</td>
 			</tr>
 			<tr>
 				<td class="info col-xs-3">email</td>

@@ -4,6 +4,7 @@
 		<%= image_tag("997909.jpg", size: '50x50') %><span><%= @name %>の路線から口コミを探す</span>
 	</div>
 	<table class="table table-bordered table-hover table-striped">
+		<!-- [Heart Rails Exoress]のAPI仕様書に従っている -->
 		<% @lines["response"]["line"].each do |line_name| %>
 			<tbody>
 				<tr>

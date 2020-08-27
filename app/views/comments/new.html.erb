@@ -1,7 +1,8 @@
 <div class="col-lg-2"></div>
 <div class="col-lg-8">
-	<h3 class="commentsub">口コミ投稿フォーム</h3>
+	<h3 class="comment-subject">口コミ投稿フォーム</h3>
 	<div class="comment">
+		<!-- 同じ駅にコメント2回以上できないようにしている。その際のアラートメッセージ -->
 		<% if flash[:alert] %>
 			<p><%= flash[:alert] %></p>
 		<% end %>
@@ -11,12 +12,12 @@
 	      		<div>カテゴリー選択</div>
 	      		<%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
 	      	</div>
-	        <div class="comment_c">
+	        <div class="comment_body">
 	        	<div>コメント</div>
 		    	<%= f.text_area :body %>
 	      	</div>
 	      	<div><%= rating_for @station, '駅', disable_after_rate: false, star_path: "/images/" %></div>
-	      	<div class="comment_s">
+	      	<div class="comment_submit">
 	        	<%= f.submit "口コミする" %>
 	      	</div>
 	  	<% end %>

@@ -81,12 +81,12 @@ body {
     margin: 60px 0 60px 0;
 }
 
-.a-towns {
+.about-towns {
     line-height: 160px;
     margin-left: 200px;
 }
 
-.a-info {
+.about-info {
     width: 520px;
 }
 
@@ -294,13 +294,6 @@ body {
     cursor: pointer;
 }
 
-@media screen and (max-width: 480px){
-    /* スマホユーザー向けにボタン文字サイズを調整 */
-    .japan_map .area_btn{
-        font-size: 4vw;
-    }
-}
-
 .japan_map {
     margin-top: 50px;
 }
@@ -336,7 +329,7 @@ body {
   justify-content: space-between;
 }
 
-.topsub {
+.top-subject {
     border: solid 5px #87cefa;
     border-radius: 50px;
     padding: 13px;
@@ -345,7 +338,7 @@ body {
     font-family: 'Corben', cursive;
 }
 
-.topsub {
+.top-subject {
   box-shadow: 0px 0px 0px 5px #dfefff;
   border: dashed 1px #96c2fe;
   padding: 0.2em 0.5em;
@@ -353,7 +346,7 @@ body {
   line-height: 40px;
 }
 
-.topcomment {
+.top-comment {
     margin-bottom: 50px;
 }
 
@@ -537,7 +530,7 @@ body {
 
 
 /* 口コミページ開始 */
-.commentsub {
+.comment-subject {
     margin: 40px 0px 20px;
 }
 
@@ -551,11 +544,11 @@ body {
     height: 150px;
 }
 
-.comment_c  {
+.comment_body  {
     margin: 20px 0 15px 0;
 }
 
-.comment_s {
+.comment_submit {
     margin-top: 20px;
 }
 /* 口コミページ終了 */

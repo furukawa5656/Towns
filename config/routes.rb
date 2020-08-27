@@ -16,6 +16,4 @@ Rails.application.routes.draw do
   	resources :comments, only: [:new, :create, :destroy]
   end
 
-  # resources :categories, only: [:create, :edit, :update]
-
 end

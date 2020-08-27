@@ -4,11 +4,10 @@
     <div>password: 123456</div>
 </div>
 <div class="col-lg-8">
-    <h1 class="topsub">あなたが知りたい口コミ情報のある駅へGO!</h1>
+    <h1 class="top-subject">あなたが知りたい口コミ情報のある駅へGO!</h1>
     <div class="japan_prefecture">
         <div class="japan_map">
             <%= image_tag "prefecture_color.png", :size =>'546x506' %>
-            <!-- <img src="dog.jpg" alt="［写真］">alt:何かしらの問題で表示されなかった際に代替テキストが表示されます -->
             <span class="area_btn area1" data-area="1">北海道・東北</span>
             <span class="area_btn area2" data-area="2">関東</span>
             <span class="area_btn area3" data-area="3">中部</span>
@@ -160,7 +159,7 @@
         </div>
     </div>
 
-    <div class="topcomment">
+    <div class="top-comment">
         <h4>新着口コミ</h4>
         <% @comments.last(7).sort.reverse.each do |c| %>
             <div class="top_comment_info bg-warning">

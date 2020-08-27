@@ -1,4 +1,3 @@
-
 $(document).ready(function() {
     //地域を選択
     $('.area_btn').click(function(){
@@ -20,10 +19,7 @@ $(document).ready(function() {
         if($(this).data('id')){
             var id = $(this).data('id');
             console.log(id)
-            //このidを使用して行いたい操作をしてください
-            //都道府県IDに応じて別ページに飛ばしたい場合はこんな風に書く↓
             window.location.href = '/lines?p=' + id;
-
             prefReset();
         }
     });
