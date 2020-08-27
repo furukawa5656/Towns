@@ -1,7 +1,7 @@
 # Towns
 
 ## デモ
-<img width="1411" alt="スクリーンショット 2020-08-27 18 13 39" src="https://user-images.githubusercontent.com/65170640/91421834-6031cd80-e891-11ea-92c5-a5b5b03200bd.png">
+![画面収録 2020-08-27 20 52 09 mov](https://user-images.githubusercontent.com/65170640/91439280-ab56db00-e8a7-11ea-9543-6e677c77a594.gif)
 
 ## サイトテーマ
 街の暮らしの口コミサイト
@@ -43,6 +43,10 @@ $ bundle install
 $ rails db:seed  
 $ rake insert_line:run  
 $ rake insert_station:run
+
+## その他
+サイトURL
+http://52.197.60.175/
 
 ## 作者
 furukawa
