@@ -1,0 +1,8 @@
+ja:
+  activerecord:
+    models:
+      comment: 口コミ
+    attributes:
+      comment:
+        category_id: カテゴリー
+        body: 口コミ内容

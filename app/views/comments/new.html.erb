@@ -10,10 +10,10 @@
 	    	<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
 	    	<div>
 	      		<div>カテゴリー選択</div>
-	      		<%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
+	      		<%= f.collection_select :category_id, Category.all, :id, :name %>
 	      	</div>
 	        <div class="comment_body">
-	        	<div>コメント</div>
+	        	<div>口コミ内容</div>
 		    	<%= f.text_area :body %>
 	      	</div>
 	      	<div><%= rating_for @station, '駅', disable_after_rate: false, star_path: "/images/" %></div>

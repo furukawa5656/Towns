@@ -1,5 +1,13 @@
-<h4>テストユーザー</h4>
-<div><%= link_to "簡単ログイン", home_test_acount_sign_in_path, method: :post, class: "btn btn-danger" %></div><br>
-<% if flash[:alert] %>
-	<p><%= flash[:alert].html_safe %></p>
-<% end %>
+<div style="margin-top: 33px;">
+	<% if user_signed_in? && current_user.email == "test@example.com" %>
+		<div><%= link_to "ゲストログイン済", '#', class: "btn btn-danger" %></div><br>
+		<% if flash[:alert] %>
+			<p><%= flash[:alert].html_safe %></p>
+		<% end %>
+	<% else %>
+		<div><%= link_to "ゲスト簡単ログイン", home_test_acount_sign_in_path, method: :post, class: "btn btn-primary" %></div><br>
+		<% if flash[:alert] %>
+			<p><%= flash[:alert].html_safe %></p>
+		<% end %>
+	<% end %>
+</div>

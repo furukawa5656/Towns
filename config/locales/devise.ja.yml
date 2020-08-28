@@ -25,6 +25,10 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        nickname: ニックネーム
+        gender: 性別
+        age_group: 年代
+        family_structure: 生活スタイル
     models:
       user: ユーザ
   devise:

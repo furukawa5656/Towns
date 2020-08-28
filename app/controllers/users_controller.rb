@@ -44,7 +44,7 @@ class UsersController < ApplicationController
 
   def check_test_acount
     if current_user.email == 'test@example.com'
-      redirect_to root_path, alert: 'テストユーザーは<br>操作不可です。'.html_safe
+      redirect_to root_path, alert: 'ゲストユーザーは<br>操作不可です。'.html_safe
     end
   end
 
