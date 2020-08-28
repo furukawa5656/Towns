@@ -16,9 +16,7 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-.registration-gender {
-  display: flex;
-}
+
 
 /* テーブル文字数バグ防止 */
 table{
@@ -379,6 +377,10 @@ body {
 .regi {
   display: flex;
   justify-content: space-between;
+}
+
+.registration-gender {
+  display: flex;
 }
 /* 会員登録終了*/
 
