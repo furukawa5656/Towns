@@ -16,6 +16,9 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.registration-gender {
+  display: flex;
+}
 
 /* テーブル文字数バグ防止 */
 table{
