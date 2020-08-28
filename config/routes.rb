@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   root to: "home#top"
   get 'home/about', to:"home#about"
+  post '/home/test_acount_sign_in', to: 'home#test_acount'
 
   resources :users, only:[:show, :edit, :update] do
   	get "users/close_view", to: "users#close_view"
