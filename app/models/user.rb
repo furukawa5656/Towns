@@ -27,4 +27,10 @@ class User < ApplicationRecord
 
   ratyrate_rater
 
+  def self.guest
+    user = User.find_or_create_by!(email: 'test@example.com') do |user|
+    user.password = SecureRandom.urlsafe_base64
+    end
+  end
+
 end
