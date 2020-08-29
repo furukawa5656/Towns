@@ -10,7 +10,7 @@
 	    	<div class="error"><%= render 'layouts/error_messages', model: f.object %></div>
 	    	<div>
 	      		<div>カテゴリー選択</div>
-	      		<%= f.collection_select :category_id, Category.all, :id, :name %>
+	      		<%= f.collection_select :category_id, Category.all, :id, :name, {include_blank: "---"} %>
 	      	</div>
 	        <div class="comment_body">
 	        	<div>口コミ内容</div>

@@ -4,5 +4,5 @@ ja:
       comment: 口コミ
     attributes:
       comment:
-        category_id: カテゴリー
+        category: カテゴリー
         body: 口コミ内容
