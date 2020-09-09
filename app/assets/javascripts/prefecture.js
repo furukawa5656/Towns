@@ -15,10 +15,8 @@ $(document).ready(function() {
 
     //都道府県をクリック
     $('.pref_list [data-id]').click(function(){
-        console.log($(this).data('id'))
         if($(this).data('id')){
             var id = $(this).data('id');
-            console.log(id)
             window.location.href = '/lines?p=' + id;
             prefReset();
         }
