@@ -1,7 +1,7 @@
 # Towns
 
 ## デモ
-![画面収録 2020-09-10 1 52 12 mov](https://user-images.githubusercontent.com/65170640/92629272-0c9b9700-f309-11ea-917f-1f0ca0e7a208.gif)
+![画面収録 2020-09-10 2 02 14 mov](https://user-images.githubusercontent.com/65170640/92629924-f6420b00-f309-11ea-8a8b-201444d7c681.gif)
 
 ## サイトテーマ
 街の暮らしの口コミサイト
