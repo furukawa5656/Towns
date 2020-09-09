@@ -50,6 +50,3 @@ http://52.197.60.175/
 
 ## 作者
 furukawa
-
-## ライセンス
-"Towns" is under [MIT license](https://en.wikipedia.org/wiki/MIT_License).
